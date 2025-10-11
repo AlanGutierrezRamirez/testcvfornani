@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnelli Atentar</title>
-    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <title>Creative Portfolio | Video & Print</title>
     
-    <!-- Load New Fonts: Lora (for titles) and Source Sans 3 (for body) --><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+    
+    
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         /* Custom styles for the font and smooth scrolling */
@@ -26,7 +28,8 @@
             overflow: hidden;
             border-radius: 0.75rem; /* rounded-xl */
         }
-        .video-container iframe {
+        .video-container iframe,
+        .video-container video { /* Added video tag to ensure it fills the container */
             position: absolute;
             top: 0;
             left: 0;
@@ -68,7 +71,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo/Name --><a href="#home" class="text-4xl hero-title font-bold text-white transition duration-300 hover:text-primary-accent italic">
-                    Arnelli Atentar, Creative Profile
+                    [Your Name] Creative
                 </a>
 
                 <!-- Desktop Navigation --><nav class="hidden md:flex space-x-8">
@@ -119,20 +122,33 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
 
-                    <!-- Video Project 1: Commercial --><div class="bg-primary-bg p-6 rounded-xl shadow-2xl border border-primary-accent/40">
+                    <!-- Video Project 1: Google Drive Embed Example (Using iframe for Google Drive) --><div class="bg-primary-bg p-6 rounded-xl shadow-2xl border border-primary-accent/40">
                         <div class="video-container mb-4">
-                            <!-- Placeholder for an embedded video (e.g., YouTube or Vimeo iframe) --><iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?si=y0Y_K0A-e_7-gXp5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <!--
+                                TO USE GOOGLE DRIVE:
+                                1. Set the file sharing to "Anyone with the link".
+                                2. Replace [YOUR_FILE_ID] with the ID from your Google Drive URL.
+                                   Example ID: 123456abcdef-your-video-id-xyz
+                            -->
+                            <iframe 
+                                src="https://drive.google.com/file/d/[YOUR_FILE_ID]/preview" 
+                                title="Google Drive Embed" 
+                                frameborder="0" 
+                                allow="autoplay" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
-                        <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Brand Commercial - "Velocity"</h3>
-                        <p class="text-gray-300">A high-energy 60-second spot focusing on dynamic motion graphics and tight pacing. Edited in Adobe Premiere Pro and colored in DaVinci Resolve.</p>
+                        <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Project: Google Drive Demo (External Embed)</h3>
+                        <p class="text-gray-300">Demonstrates embedding directly from Google Drive. **NOTE: Playback speed and reliability may vary greatly.**</p>
                         <span class="inline-block mt-3 text-sm font-medium text-secondary-dark bg-primary-accent px-3 py-1 rounded-full shadow-md">
-                            #Commercial #MotionGraphics
+                            #GoogleDrive #ExternalSource
                         </span>
                     </div>
 
-                    <!-- Video Project 2: Documentary Short --><div class="bg-primary-bg p-6 rounded-xl shadow-2xl border border-primary-accent/40">
+                    <!-- Video Project 2: YouTube/Vimeo Example (Using iframe for reliable streaming) --><div class="bg-primary-bg p-6 rounded-xl shadow-2xl border border-primary-accent/40">
                          <div class="video-container mb-4">
-                            <!-- Another placeholder for an embedded video --><iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?si=y0Y_K0A-e_7-gXp5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <!-- Use an iframe for services like YouTube or Vimeo for fast, reliable streaming -->
+                            <iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?si=y0Y_K0A-e_7-gXp5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Short Documentary - "The Quiet Craft"</h3>
                         <p class="text-gray-300">A long-form edit emphasizing emotional storytelling and subtle, cinematic transitions. Focused heavily on sound design and pacing for atmosphere.</p>
@@ -141,9 +157,14 @@
                         </span>
                     </div>
 
-                    <!-- Video Project 3: Social Media Content (Placeholder 1) --><div class="bg-primary-bg p-6 rounded-xl shadow-2xl border border-primary-accent/40 md:col-span-2 lg:col-span-1">
+                    <!-- Video Project 3: Supabase Storage Example (Using <video> for direct file control) --><div class="bg-primary-bg p-6 rounded-xl shadow-2xl border border-primary-accent/40 md:col-span-2 lg:col-span-1">
                          <div class="video-container mb-4">
-                            <!-- Another placeholder for an embedded video --><iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?si=y0Y_K0A-e_7-gXp5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <!-- Use the <video> tag for files hosted on Supabase Storage, S3, etc. -->
+                             <video controls poster="https://placehold.co/1280x720/262626/f0f0f0?text=Explainer+Thumbnail">
+                                <!-- IMPORTANT: Replace the src below with your actual Supabase Storage Public URL for the .mp4 file -->
+                                <source src="https://your.supabase.url/storage/v1/object/public/videos/your-explainer.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Explainer Video Series</h3>
                         <p class="text-gray-300">Fast-paced, high retention edits optimized for vertical platforms. Key focus on integrating text overlays and jump cuts for engagement.</p>
@@ -155,46 +176,150 @@
             </div>
         </section>
 
-        <!-- 3. Print/Pamphlet Portfolio Section --><section id="pamphlets" class="py-16 md:py-24 bg-primary-bg border-t border-primary-dark">
+        <!-- 3. Print/Pamphlet Portfolio Section (Updated with Tabbed Grid) --><section id="pamphlets" class="py-16 md:py-24 bg-primary-bg border-t border-primary-dark">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="hero-title text-5xl font-extrabold text-center mb-16 border-b-2 border-primary-accent pb-2 inline-block mx-auto text-white">
-                    Print & Pamphlet Design
+                <h2 class="hero-title text-5xl font-extrabold text-center mb-10 border-b-2 border-primary-accent pb-2 inline-block mx-auto text-white">
+                    Print & Graphic Design Portfolio
                 </h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-                    <!-- Pamphlet 1: Event Flyer --><div class="bg-primary-dark rounded-xl shadow-xl overflow-hidden border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                        <!-- Updated placeholder to match the new color scheme --><img src="https://placehold.co/400x550/f59e0b/1a1a1a?text=Event+Flyer" onerror="this.onerror=null; this.src='https://placehold.co/400x550/f59e0b/1a1a1a?text=Event+Flyer';" alt="Event Flyer Design" class="w-full h-auto object-cover border-b border-secondary-dark">
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-white hero-title">Music Festival Flyer</h3>
-                            <p class="text-sm text-gray-400">Vibrant, high-impact design for a summer music event.</p>
-                        </div>
-                    </div>
-
-                    <!-- Pamphlet 2: Corporate Brochure --><div class="bg-primary-dark rounded-xl shadow-xl overflow-hidden border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                        <img src="https://placehold.co/400x550/374151/f59e0b?text=Brochure+Design" onerror="this.onerror=null; this.src='https://placehold.co/400x550/374151/f59e0b?text=Brochure+Design';" alt="Corporate Brochure Design" class="w-full h-auto object-cover border-b border-secondary-dark">
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-white hero-title">Corporate Tri-Fold</h3>
-                            <p class="text-sm text-gray-400">Clean, professional layout adhering to brand guidelines.</p>
-                        </div>
-                    </div>
-
-                    <!-- Pamphlet 3: Menu Design --><div class="bg-primary-dark rounded-xl shadow-xl overflow-hidden border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                        <img src="https://placehold.co/400x550/9CA3AF/1a1a1a?text=Restaurant+Menu" onerror="this.onerror=null; this.src='https://placehold.co/400x550/9CA3AF/1a1a1a?text=Restaurant+Menu';" alt="Restaurant Menu Design" class="w-full h-auto object-cover border-b border-secondary-dark">
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-white hero-title">Restaurant Menu</h3>
-                            <p class="text-sm text-gray-400">Appetizing food imagery and easy-to-read typography.</p>
-                        </div>
-                    </div>
-
-                    <!-- Pamphlet 4: Magazine Spread --><div class="bg-primary-dark rounded-xl shadow-xl overflow-hidden border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                        <img src="https://placehold.co/400x550/f59e0b/262626?text=Magazine+Spread" onerror="this.onerror=null; this.src='https://placehold.co/400x550/f59e0b/262626?text=Magazine+Spread';" alt="Magazine Spread Design" class="w-full h-auto object-cover border-b border-secondary-dark">
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-white hero-title">Lifestyle Magazine Ad</h3>
-                            <p class="text-sm text-gray-400">High-end layout for a luxury brand advertisement.</p>
-                        </div>
-                    </div>
-
+                <!-- Tab Navigation Buttons -->
+                <div class="flex flex-wrap justify-center space-x-2 sm:space-x-4 mb-12">
+                    <button id="tab-logos" onclick="switchTab('logos')" class="tab-button py-3 px-6 rounded-full font-semibold transition duration-300 shadow-lg hero-title text-gray-300 hover:text-primary-accent hover:bg-primary-dark">
+                        Logo Design
+                    </button>
+                    <button id="tab-product" onclick="switchTab('product')" class="tab-button py-3 px-6 rounded-full font-semibold transition duration-300 hero-title text-gray-300 hover:text-primary-accent hover:bg-primary-dark">
+                        Product Shots
+                    </button>
+                    <button id="tab-pubmats" onclick="switchTab('pubmats')" class="tab-button py-3 px-6 rounded-full font-semibold transition duration-300 hero-title text-gray-300 hover:text-primary-accent hover:bg-primary-dark">
+                        Pubmats & Graphics
+                    </button>
                 </div>
+
+                <!-- Content Containers (Only one is visible at a time) -->
+
+                <!-- Category 1: Logos (6 Samples) -->
+                <div id="logos-content" class="tab-content">
+                    <h3 class="hero-title text-2xl font-bold text-primary-accent mb-6">Logo Design (5-8 Samples)</h3>
+                    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <!-- Sample 1 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <!-- Image now has onclick and defined height (h-32) -->
+                            <img onclick="openModal(this.src)" src="Logos/Bay Area 1.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/262626/f59e0b?text=Logo+A';" alt="Logo Design Sample A" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Brand Identity Mockup</p>
+                        </div>
+                        <!-- Sample 2 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="Logos/Bay Area 2.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/f59e0b/1a1a1a?text=Logo+B';" alt="Logo Design Sample B" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Monogram Mark</p>
+                        </div>
+                        <!-- Sample 3 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="Logos/Lipunan Tech.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/1a1a1a/f59e0b?text=Logo+C';" alt="Logo Design Sample C" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Wordmark Style</p>
+                        </div>
+                        <!-- Sample 4 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="Logos/Nirbana.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/262626/f0f0f0?text=Logo+D';" alt="Logo Design Sample D" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">E-Sports Badge</p>
+                        </div>
+                        <!-- Sample 5 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="Logos/Sustainability.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/f59e0b/262626?text=Logo+E';" alt="Logo Design Sample E" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Minimalist Design</p>
+                        </div>
+                        <!-- Sample 6 (Extra space for more than 5) -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40 hidden md:block">
+                            <img onclick="openModal(this.src)" src="https://placehold.co/200x200/1a1a1a/f0f0f0?text=Logo+F" onerror="this.onerror=null; this.src='https://placehold.co/200x200/1a1a1a/f0f0f0?text=Logo+F';" alt="Logo Design Sample F" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Geometrical Concept</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Product Photography & Retouching (6 Samples) -->
+                <div id="product-content" class="tab-content hidden">
+                    <h3 class="hero-title text-2xl font-bold text-primary-accent mb-6">Product Photography & Retouching (5-8 Samples)</h3>
+                    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <!-- Sample 1 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <!-- Image now has onclick, defined height (h-32), and object-contain -->
+                            <img onclick="openModal(this.src)" src="Product Shots/10.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/262626/f59e0b?text=Product+1';" alt="Product Shot Sample 1" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Clean White Background</p>
+                        </div>
+                        <!-- Sample 2 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="Product Shots/12.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f59e0b/1a1a1a?text=Product+2';" alt="Product Shot Sample 2" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Lifestyle Shot (Retouched)</p>
+                        </div>
+                        <!-- Sample 3 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="Product Shots/14.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/1a1a1a/f59e0b?text=Product+3';" alt="Product Shot Sample 3" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Detail/Macro</p>
+                        </div>
+                        <!-- Sample 4 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="Product Shots/2.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/262626/f0f0f0?text=Product+4';" alt="Product Shot Sample 4" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Studio Lighting</p>
+                        </div>
+                        <!-- Sample 5 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="Product Shots/4.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f59e0b/262626?text=Product+5';" alt="Product Shot Sample 5" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Cosmetic Retouch</p>
+                        </div>
+                        <!-- Sample 6 (Extra space for more than 5) -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40 hidden md:block">
+                            <img onclick="openModal(this.src)" src="Product Shots/6.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/1a1a1a/f0f0f0?text=Product+6';" alt="Product Shot Sample 6" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Food/Beverage Shot</p>
+                        </div>
+                        <!-- Sample 7 (Extra space for more than 5) -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40 hidden md:block">
+                            <img onclick="openModal(this.src)" src="Product Shots/8.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/1a1a1a/f0f0f0?text=Product+6';" alt="Product Shot Sample 6" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Food/Beverage Shot</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Pubmats & Social Media Graphics (6 Samples) -->
+                <div id="pubmats-content" class="tab-content hidden">
+                    <h3 class="hero-title text-2xl font-bold text-primary-accent mb-6">Pubmats & Social Media Graphics (5-8 Samples)</h3>
+                    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <!-- Sample 1 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="PubMats/1.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/f59e0b/1a1a1a?text=Pubmat+A';" alt="Pubmat Sample 1" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Vertical Story Ad</p>
+                        </div>
+                        <!-- Sample 2 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="PubMats/2.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/1a1a1a/f59e0b?text=Pubmat+B';" alt="Pubmat Sample 2" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Event Poster</p>
+                        </div>
+                        <!-- Sample 3 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="PubMats/3.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/262626/f0f0f0?text=Pubmat+C';" alt="Pubmat Sample 3" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Informational Flyer</p>
+                        </div>
+                        <!-- Sample 4 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="PubMats/4.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/f0f0f0/1a1a1a?text=Pubmat+D';" alt="Pubmat Sample 4" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Square Instagram Post</p>
+                        </div>
+                        <!-- Sample 5 -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                            <img onclick="openModal(this.src)" src="PubMats/Web1.jpg" onerror="this.onerror=null; this.src='https://placehold.co/200x300/f59e0b/262626?text=Pubmat+E';" alt="Pubmat Sample 5" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Promotional Banner</p>
+                        </div>
+                        <!-- Sample 6 (Extra space for more than 5) -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40 hidden md:block">
+                            <img onclick="openModal(this.src)" src="PubMats/Web2.jpg" onerror="this.onerror=null; this.src='https://placehold.co/200x300/1a1a1a/f0f0f0?text=Pubmat+F';" alt="Pubmat Sample 6" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Magazine Advert</p>
+                        </div>
+                        <!-- Sample 7 (Extra space for more than 5) -->
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40 hidden md:block">
+                            <img onclick="openModal(this.src)" src="PubMats/Web3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/200x300/1a1a1a/f0f0f0?text=Pubmat+F';" alt="Pubmat Sample 6" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                            <p class="text-sm text-center text-gray-400 mt-2">Magazine Advert</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -268,6 +393,17 @@
             </div>
         </section>
     </main>
+    
+    <!-- Full-Screen Image Modal (Lightbox) -->
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/90 backdrop-blur-sm p-4" onclick="closeModal()">
+        <div class="relative max-w-7xl max-h-full" onclick="event.stopPropagation()">
+            <!-- Modal Content: Close Button and Image -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-4xl font-bold p-2 leading-none hover:text-primary-accent transition duration-200 z-50 rounded-full bg-primary-dark/50">
+                &times;
+            </button>
+            <img id="modal-image" src="" alt="Enlarged Portfolio Image" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl border-4 border-primary-accent/50">
+        </div>
+    </div>
 
     <!-- Footer --><footer class="bg-primary-dark border-t border-secondary-dark py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
@@ -314,6 +450,58 @@
                 copyMessage.classList.remove('opacity-0');
                 copyMessage.classList.add('opacity-100');
             }
+        });
+
+        // --- New Modal/Lightbox Functions ---
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+
+        function openModal(imageSrc) {
+            modalImage.src = imageSrc;
+            imageModal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            imageModal.classList.add('hidden');
+            modalImage.src = ""; // Clear source for performance
+        }
+        // ------------------------------------
+
+        // Function to handle the tab switching in the Print section
+        function switchTab(activeTabId) {
+            // 1. Hide all content and reset tab styling
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            document.querySelectorAll('.tab-button').forEach(button => {
+                // Remove active styling
+                button.classList.remove('bg-primary-accent', 'text-secondary-dark', 'shadow-lg', 'shadow-primary-accent/50');
+                // Add inactive styling
+                button.classList.add('text-gray-300', 'hover:text-primary-accent', 'hover:bg-primary-dark');
+            });
+
+            // 2. Show the active content and set the active tab styling
+            const activeContent = document.getElementById(activeTabId + '-content');
+            const activeTabButton = document.getElementById('tab-' + activeTabId);
+
+            if (activeContent) {
+                activeContent.classList.remove('hidden');
+            }
+
+            if (activeTabButton) {
+                // Remove inactive styling
+                activeTabButton.classList.remove('text-gray-300', 'hover:text-primary-accent', 'hover:bg-primary-dark');
+                // Add active styling
+                activeTabButton.classList.add('bg-primary-accent', 'text-secondary-dark', 'shadow-lg', 'shadow-primary-accent/50');
+            }
+        }
+
+        // Initialize the default tab (Logos) when the script loads
+        // Wrapping in a check to ensure all elements are ready
+        document.addEventListener('DOMContentLoaded', () => {
+             // We delay the initialization slightly to ensure all Tailwind styles are parsed correctly
+             setTimeout(() => switchTab('logos'), 10);
         });
     </script>
 </body>
