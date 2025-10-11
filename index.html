@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnelli Atentar</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load New Fonts: Lora (for titles) and Source Sans 3 (for body) --><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles for the font and smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Source Sans 3', sans-serif; /* New body font */
+            background-color: #1a1a1a; /* Dark Charcoal Grey */
+            color: #f0f0f0; /* Soft white text */
+        }
+        /* Custom class for responsive video embed */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.75rem; /* rounded-xl */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Class for the visually dominant hero title */
+        .hero-title {
+            font-family: 'Lora', serif;
+            /* text-transform: uppercase; (Removed for softer feel) */
+        }
+        .title-subtext { /* For the smaller text in the hero title */
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 300; /* Lighter weight */
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Source Sans 3', 'sans-serif'], // Body font
+                        serif: ['Lora', 'serif'], // Title font
+                    },
+                    colors: {
+                        'primary-accent': '#f59e0b', /* Amber Yellow */
+                        'primary-dark': '#262626', /* Slightly lighter charcoal for components */
+                        'primary-bg': '#1a1a1a', /* Main background - Dark Charcoal Grey */
+                        'secondary-dark': '#0d0d0d', /* Even darker for contrast (used in input) */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation - Absolute and transparent over the h-screen Hero --><header class="absolute top-0 left-0 right-0 z-50 bg-transparent text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo/Name --><a href="#home" class="text-4xl hero-title font-bold text-white transition duration-300 hover:text-primary-accent italic">
+                    Arnelli Atentar, Creative Profile
+                </a>
+
+                <!-- Desktop Navigation --><nav class="hidden md:flex space-x-8">
+                    <a href="#video" class="text-white hover:text-primary-accent px-3 py-2 rounded-md font-medium transition duration-300">Video Editing</a>
+                    <a href="#pamphlets" class="text-white hover:text-primary-accent px-3 py-2 rounded-md font-medium transition duration-300">Print Work</a>
+                    <a href="#about" class="text-white hover:text-primary-accent px-3 py-2 rounded-md font-medium transition duration-300">Skills</a>
+                    <!-- Contact Button now uses the accent color for higher visibility --><a href="#contact" class="text-secondary-dark bg-primary-accent hover:opacity-80 px-4 py-2 rounded-full font-bold transition duration-300 shadow-lg shadow-primary-accent/50">Contact Now</a>
+                </nav>
+
+                <!-- Mobile Menu Button --><button id="menu-toggle" type="button" class="md:hidden text-white hover:text-primary-accent focus:outline-none focus:ring-2 focus:ring-primary-accent rounded-md p-2">
+                    <!-- Icon for Menu --><svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) - Now uses the component dark color --><div id="mobile-menu" class="hidden md:hidden bg-primary-dark">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#video" class="text-white hover:bg-secondary-dark hover:text-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-300">Video Editing</a>
+                <a href="#pamphlets" class="text-white hover:bg-secondary-dark hover:text-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-300">Print Work</a>
+                <a href="#about" class="text-white hover:bg-secondary-dark hover:text-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-300">Skills</a>
+                <a href="#contact" class="text-secondary-dark bg-primary-accent hover:opacity-80 block px-3 py-2 rounded-md text-base font-bold transition duration-300">Contact Now</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section - 100% viewport height, dark charcoal background --><section id="home" class="min-h-screen flex items-center justify-center text-center bg-primary-bg relative overflow-hidden border-b-2 border-primary-accent/30">
+            <!-- Subtle background pattern for softer feel --><div class="absolute inset-0 opacity-5 pointer-events-none">
+                <div class="w-full h-full bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px]"></div>
+            </div>
+            <div class="max-w-5xl mx-auto px-4 z-10 w-full">
+                <!-- Main title now uses Lora font with softer styling --><h1 class="hero-title text-7xl sm:text-8xl lg:text-[9rem] font-bold leading-tight tracking-normal mb-6 text-white italic">
+                    <span class="block text-3xl sm:text-4xl font-light mb-4 text-primary-accent title-subtext not-italic">Crafting Your Story, Beautifully.</span>
+                    Visual <span class="text-primary-accent">Essence</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mt-8 max-w-4xl mx-auto font-light">
+                    Elevating visions through elegant video and exquisite print design.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. Video Editing Portfolio Section --><section id="video" class="py-16 md:py-24 bg-primary-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="hero-title text-5xl font-extrabold text-center mb-16 border-b-2 border-primary-accent pb-2 inline-block mx-auto text-white">
+                    Video Editing Showcase
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+                    <!-- Video Project 1: Commercial --><div class="bg-primary-bg p-6 rounded-xl shadow-2xl border border-primary-accent/40">
+                        <div class="video-container mb-4">
+                            <!-- Placeholder for an embedded video (e.g., YouTube or Vimeo iframe) --><iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?si=y0Y_K0A-e_7-gXp5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Brand Commercial - "Velocity"</h3>
+                        <p class="text-gray-300">A high-energy 60-second spot focusing on dynamic motion graphics and tight pacing. Edited in Adobe Premiere Pro and colored in DaVinci Resolve.</p>
+                        <span class="inline-block mt-3 text-sm font-medium text-secondary-dark bg-primary-accent px-3 py-1 rounded-full shadow-md">
+                            #Commercial #MotionGraphics
+                        </span>
+                    </div>
+
+                    <!-- Video Project 2: Documentary Short --><div class="bg-primary-bg p-6 rounded-xl shadow-2xl border border-primary-accent/40">
+                         <div class="video-container mb-4">
+                            <!-- Another placeholder for an embedded video --><iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?si=y0Y_K0A-e_7-gXp5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Short Documentary - "The Quiet Craft"</h3>
+                        <p class="text-gray-300">A long-form edit emphasizing emotional storytelling and subtle, cinematic transitions. Focused heavily on sound design and pacing for atmosphere.</p>
+                        <span class="inline-block mt-3 text-sm font-medium text-secondary-dark bg-primary-accent px-3 py-1 rounded-full shadow-md">
+                            #Documentary #SoundDesign
+                        </span>
+                    </div>
+
+                    <!-- Video Project 3: Social Media Content (Placeholder 1) --><div class="bg-primary-bg p-6 rounded-xl shadow-2xl border border-primary-accent/40 md:col-span-2 lg:col-span-1">
+                         <div class="video-container mb-4">
+                            <!-- Another placeholder for an embedded video --><iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?si=y0Y_K0A-e_7-gXp5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Explainer Video Series</h3>
+                        <p class="text-gray-300">Fast-paced, high retention edits optimized for vertical platforms. Key focus on integrating text overlays and jump cuts for engagement.</p>
+                        <span class="inline-block mt-3 text-sm font-medium text-secondary-dark bg-primary-accent px-3 py-1 rounded-full shadow-md">
+                            #SocialMedia #Explainer
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Print/Pamphlet Portfolio Section --><section id="pamphlets" class="py-16 md:py-24 bg-primary-bg border-t border-primary-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="hero-title text-5xl font-extrabold text-center mb-16 border-b-2 border-primary-accent pb-2 inline-block mx-auto text-white">
+                    Print & Pamphlet Design
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                    <!-- Pamphlet 1: Event Flyer --><div class="bg-primary-dark rounded-xl shadow-xl overflow-hidden border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                        <!-- Updated placeholder to match the new color scheme --><img src="https://placehold.co/400x550/f59e0b/1a1a1a?text=Event+Flyer" onerror="this.onerror=null; this.src='https://placehold.co/400x550/f59e0b/1a1a1a?text=Event+Flyer';" alt="Event Flyer Design" class="w-full h-auto object-cover border-b border-secondary-dark">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-white hero-title">Music Festival Flyer</h3>
+                            <p class="text-sm text-gray-400">Vibrant, high-impact design for a summer music event.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pamphlet 2: Corporate Brochure --><div class="bg-primary-dark rounded-xl shadow-xl overflow-hidden border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                        <img src="https://placehold.co/400x550/374151/f59e0b?text=Brochure+Design" onerror="this.onerror=null; this.src='https://placehold.co/400x550/374151/f59e0b?text=Brochure+Design';" alt="Corporate Brochure Design" class="w-full h-auto object-cover border-b border-secondary-dark">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-white hero-title">Corporate Tri-Fold</h3>
+                            <p class="text-sm text-gray-400">Clean, professional layout adhering to brand guidelines.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pamphlet 3: Menu Design --><div class="bg-primary-dark rounded-xl shadow-xl overflow-hidden border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                        <img src="https://placehold.co/400x550/9CA3AF/1a1a1a?text=Restaurant+Menu" onerror="this.onerror=null; this.src='https://placehold.co/400x550/9CA3AF/1a1a1a?text=Restaurant+Menu';" alt="Restaurant Menu Design" class="w-full h-auto object-cover border-b border-secondary-dark">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-white hero-title">Restaurant Menu</h3>
+                            <p class="text-sm text-gray-400">Appetizing food imagery and easy-to-read typography.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pamphlet 4: Magazine Spread --><div class="bg-primary-dark rounded-xl shadow-xl overflow-hidden border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
+                        <img src="https://placehold.co/400x550/f59e0b/262626?text=Magazine+Spread" onerror="this.onerror=null; this.src='https://placehold.co/400x550/f59e0b/262626?text=Magazine+Spread';" alt="Magazine Spread Design" class="w-full h-auto object-cover border-b border-secondary-dark">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-white hero-title">Lifestyle Magazine Ad</h3>
+                            <p class="text-sm text-gray-400">High-end layout for a luxury brand advertisement.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. About & Skills Section --><section id="about" class="py-16 md:py-24 bg-primary-dark border-t border-primary-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="hero-title text-5xl font-extrabold text-center mb-16 border-b-2 border-primary-accent pb-2 inline-block mx-auto text-white">
+                    About Me & Core Skills
+                </h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-1">
+                        <img src="https://placehold.co/400x400/f59e0b/1a1a1a?text=Your+Profile+Image" onerror="this.onerror=null; this.src='https://placehold.co/400x400/f59e0b/1a1a1a?text=Your+Profile+Image';" alt="Profile Image" class="w-48 h-48 rounded-full mx-auto mb-6 border-4 border-primary-accent shadow-lg shadow-primary-accent/50">
+                        <h3 class="text-3xl hero-title font-bold text-center mb-4 text-white">The Editor's Vision</h3>
+                        <p class="text-gray-300 text-center">
+                            I believe in the power of pacing, sound, and color to elevate simple footage into compelling stories. My passion lies in finding the perfect rhythm for every cut, whether it's a feature film or a simple flyer layout.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-2">
+                        <h3 class="text-3xl font-bold mb-6 text-primary-accent hero-title">Software Expertise</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                            <!-- Video Skills --><div class="p-4 bg-primary-bg rounded-lg shadow-xl border border-primary-accent/40">
+                                <p class="font-semibold text-white">Video Editing</p>
+                                <ul class="list-disc list-inside text-primary-accent/80 text-sm mt-1 space-y-1">
+                                    <li>Adobe Premiere Pro (Master)</li>
+                                    <li>DaVinci Resolve (Color/Edit)</li>
+                                    <li>Final Cut Pro X</li>
+                                </ul>
+                            </div>
+                            <!-- Graphics/Print Skills --><div class="p-4 bg-primary-bg rounded-lg shadow-xl border border-primary-accent/40">
+                                <p class="font-semibold text-white">Motion/Graphics</p>
+                                <ul class="list-disc list-inside text-primary-accent/80 text-sm mt-1 space-y-1">
+                                    <li>Adobe After Effects</li>
+                                    <li>Cinema 4D (Basics)</li>
+                                    <li>Photoshop & Illustrator</li>
+                                </ul>
+                            </div>
+                            <!-- Other Skills --><div class="p-4 bg-primary-bg rounded-lg shadow-xl border border-primary-accent/40">
+                                <p class="font-semibold text-white">Print & Design</p>
+                                <ul class="list-disc list-inside text-primary-accent/80 text-sm mt-1 space-y-1">
+                                    <li>Adobe InDesign</li>
+                                    <li>Print Layout & Prepress</li>
+                                    <li>Typography</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Contact Section --><section id="contact" class="py-16 md:py-24 bg-primary-bg border-t border-primary-dark">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="hero-title text-5xl font-extrabold text-center mb-10 text-white">
+                    Ready to Start Your Project?
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Let's collaborate on your next video or print design project.
+                </p>
+
+                <div class="bg-primary-dark p-6 rounded-xl shadow-2xl border border-primary-accent/40">
+                    <p class="text-lg font-semibold mb-3 text-white">Send me an email:</p>
+                    <div class="flex items-center justify-center space-x-2">
+                        <input id="email-to-copy" type="text" value="your.email@example.com" readonly class="bg-secondary-dark text-white p-2 rounded-lg text-center w-full max-w-xs focus:outline-none select-all cursor-pointer border border-primary-accent/50" onclick="this.select();">
+                        <button id="copy-email-btn" class="p-2 bg-primary-accent rounded-lg text-secondary-dark hover:opacity-90 transition duration-300 transform hover:scale-105 shadow-md shadow-primary-accent/50" title="Copy Email Address">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m-3 7h3m-3 0V9m0 6h-3m3 0a2 2 0 002-2v-1a2 2 0 00-2-2m-3 3h-3m3 0a2 2 0 01-2-2v-1a2 2 0 012-2m-3 3h-3m3 0a2 2 0 002-2v-1a2 2 0 00-2-2m-3 3h-3m3 0a2 2 0 01-2-2v-1a2 2 0 012-2m-3 3h-3" />
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Copy Confirmation Message --><p id="copy-message" class="text-sm text-primary-accent mt-2 h-4 transition-opacity duration-300 opacity-0"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer --><footer class="bg-primary-dark border-t border-secondary-dark py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2025 [Your Name] Creative Portfolio. All rights reserved.</p>
+            <div class="mt-2 space-x-4">
+                <a href="#" class="hover:text-primary-accent transition duration-300">LinkedIn</a>
+                <a href="#" class="hover:text-primary-accent transition duration-300">Instagram (Video)</a>
+                <a href="#" class="hover:text-primary-accent transition duration-300">Behance (Print)</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // JavaScript for Copy Email Functionality
+        document.getElementById('copy-email-btn').addEventListener('click', function() {
+            const emailInput = document.getElementById('email-to-copy');
+            const copyMessage = document.getElementById('copy-message');
+
+            // Select the text field
+            emailInput.select();
+            emailInput.setSelectionRange(0, 99999); // For mobile devices
+
+            try {
+                // Copy the text inside the text field
+                document.execCommand('copy');
+                copyMessage.textContent = 'Email copied to clipboard!';
+                copyMessage.classList.remove('opacity-0');
+                copyMessage.classList.add('opacity-100');
+
+                // Clear message after 3 seconds
+                setTimeout(() => {
+                    copyMessage.classList.remove('opacity-100');
+                    copyMessage.classList.add('opacity-0');
+                }, 3000);
+
+            } catch (err) {
+                copyMessage.textContent = 'Failed to copy. Please select and copy manually.';
+                copyMessage.classList.remove('opacity-0');
+                copyMessage.classList.add('opacity-100');
+            }
+        });
+    </script>
+</body>
+</html>
