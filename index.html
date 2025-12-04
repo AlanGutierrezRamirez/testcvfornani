@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nani</title>
+    <title>Nani - Creative Portfolio</title>
     <link rel="icon" type="image/png" href="images/NanisRoundLogo.png">
     
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         /* Custom styles for the font and smooth scrolling */
@@ -16,102 +16,77 @@
             scroll-behavior: smooth;
         }
         body {
-            font-family: 'Source Sans 3', sans-serif; /* New body font */
-            background-color: #F4F4F4; /* Soft Light Grey */
-            color: #333333; /* Dark text */
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: #F4F4F4;
+            color: #333333;
         }
-        /* Custom class for responsive video embed */
+        /* Video Container */
         .video-container {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
-            border-radius: 0.75rem; /* rounded-xl */
+            border-radius: 0.75rem;
         }
         .video-container iframe,
-        .video-container video { /* Added video tag to ensure it fills the container */
+        .video-container video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
         }
-        /* Class for the visually dominant hero title */
+        /* Fonts */
         .hero-title {
             font-family: 'Lora', serif;
-            /* text-transform: uppercase; (Removed for softer feel) */
         }
-        .title-subtext { /* For the smaller text in the hero title */
+        .title-subtext {
             font-family: 'Source Sans 3', sans-serif;
-            font-weight: 300; /* Lighter weight */
+            font-weight: 300;
         }
         
-        /* --- CUSTOM SHADOWS --- */
+        /* Shadows */
         .shadow-soft-2xl {
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.05); /* Softer, wider shadow */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        /* --- ANIMATION GRAPHICS FOR LIFE (UPDATED for Headlight Sweep) --- */
+        
+        /* Animations */
         @keyframes subtle-pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); /* primary-accent */
-            }
-            50% {
-                box-shadow: 0 0 10px 5px rgba(245, 158, 11, 0.2); /* Light amber glow */
-            }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+            50% { box-shadow: 0 0 10px 5px rgba(245, 158, 11, 0.2); }
         }
-
         .pulse-accent {
             animation: subtle-pulse 3s infinite ease-in-out;
         }
 
-        /* Cyberpunk-inspired Headlight Sweep for "Essence" */
-        @keyframes headlight-sweep {
-            0% {
-                color: #333333; /* Dark text */
-                text-shadow: -30px 0 10px rgba(245, 158, 11, 0), /* Start from left, no glow */
-                             -10px 0 5px rgba(245, 158, 11, 0);
+        /* Fade in animation for the big logo */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
             }
-            25% { /* Light appears from left */
-                color: #555555;
-                text-shadow: 0 0 15px rgba(245, 158, 11, 0.6), /* Initial sweep glow */
-                             -5px 0 20px rgba(245, 158, 11, 0.3);
-            }
-            50% { /* Light is centered and strongest */
-                color: #f59e0b; /* Primary accent yellow */
-                text-shadow: 0 0 20px rgba(245, 158, 11, 0.9), /* Strongest center glow */
-                             0 0 35px rgba(245, 158, 11, 0.5); /* Wider halo */
-            }
-            75% { /* Light moves to right */
-                color: #555555;
-                text-shadow: 5px 0 15px rgba(245, 158, 11, 0.6), /* Sweep to the right */
-                             15px 0 20px rgba(245, 158, 11, 0.3);
-            }
-            100% { /* Light fades out to the right */
-                color: #333333; /* Back to dark text */
-                text-shadow: 30px 0 10px rgba(245, 158, 11, 0), /* End to the right, no glow */
-                             10px 0 5px rgba(245, 158, 11, 0);
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
             }
         }
-
-        .headlight-essence {
-            animation: headlight-sweep 6s infinite ease-in-out; /* Slower, more deliberate sweep */
-            display: inline-block; /* Essential for text-shadow to work on span */
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
         }
-        /* ----------------------------------- */
     </style>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Source Sans 3', 'sans-serif'], // Body font
-                        serif: ['Lora', 'serif'], // Title font
+                        sans: ['Source Sans 3', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
                     },
                     colors: {
                         'primary-accent': '#f59e0b', /* Amber Yellow */
-                        'primary-dark': '#FFFFFF', /* White background for components/cards */
-                        'primary-bg': '#F4F4F4', /* Main background - Soft Light Grey */
-                        'secondary-dark': '#333333', /* Dark text/input background */
+                        'primary-dark': '#FFFFFF', /* White background for components */
+                        'primary-bg': '#F4F4F4', /* Main background - Light Grey */
+                        'secondary-dark': '#333333', /* Dark text */
                     }
                 }
             }
@@ -120,55 +95,76 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation - Absolute and transparent over the h-screen Hero --><header class="absolute top-0 left-0 right-0 z-50 bg-transparent text-secondary-dark">
+    <header class="absolute top-0 left-0 right-0 z-50 bg-transparent pt-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo/Name --><a href="#home" class="text-4xl hero-title font-bold text-secondary-dark transition duration-300 hover:text-primary-accent italic">
-                   Arnelli Atentar Creative
+            <div class="flex items-center justify-between h-20"> 
+                <a href="#home" class="group flex items-center space-x-2 transition duration-300">
+                    <span class="text-xl font-bold text-white/80 hover:text-primary-accent tracking-widest">
+                        Nani Atentar
+                    </span>
                 </a>
 
-                <!-- Desktop Navigation --><nav class="hidden md:flex space-x-8">
-                    <a href="./cv/Atentar-CV.PDF" download="NanisCV" class="text-secondary-dark hover:text-primary-accent px-3 py-2 rounded-md font-medium transition duration-300">Curriculum Vitae</a>
-                    <a href="#video" class="text-secondary-dark hover:text-primary-accent px-3 py-2 rounded-md font-medium transition duration-300">Video Editing</a>
-                    <a href="#pamphlets" class="text-secondary-dark hover:text-primary-accent px-3 py-2 rounded-md font-medium transition duration-300">Print Work</a>
-                    <a href="#about" class="text-secondary-dark hover:text-primary-accent px-3 py-2 rounded-md font-medium transition duration-300">Skills</a>
-                    <!-- Contact Button now has the pulse-accent animation --><a href="#contact" class="text-secondary-dark bg-primary-accent hover:opacity-80 px-4 py-2 rounded-full font-bold transition duration-300 shadow-lg shadow-primary-accent/50 pulse-accent">Contact Now</a>
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="./cv/Atentar-CV.PDF" download="NanisCV" class="text-gray-200 hover:text-white hover:underline decoration-primary-accent underline-offset-4 px-3 py-2 rounded-md font-medium transition duration-300 text-sm tracking-wide">CV</a>
+                    <a href="#video" class="text-gray-200 hover:text-white hover:underline decoration-primary-accent underline-offset-4 px-3 py-2 rounded-md font-medium transition duration-300 text-sm tracking-wide">Video</a>
+                    <a href="#pamphlets" class="text-gray-200 hover:text-white hover:underline decoration-primary-accent underline-offset-4 px-3 py-2 rounded-md font-medium transition duration-300 text-sm tracking-wide">Print</a>
+                    <a href="#about" class="text-gray-200 hover:text-white hover:underline decoration-primary-accent underline-offset-4 px-3 py-2 rounded-md font-medium transition duration-300 text-sm tracking-wide">Skills</a>
+                    <a href="#contact" class="text-secondary-dark bg-primary-accent hover:bg-white hover:text-primary-accent px-5 py-2 rounded-full font-bold transition duration-300 shadow-lg shadow-black/20 text-sm">Contact</a>
                 </nav>
 
-                <!-- Mobile Menu Button --><button id="menu-toggle" type="button" class="md:hidden text-secondary-dark hover:text-primary-accent focus:outline-none focus:ring-2 focus:ring-primary-accent rounded-md p-2">
-                    <!-- Icon for Menu --><svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button id="menu-toggle" type="button" class="md:hidden text-white hover:text-primary-accent focus:outline-none rounded-md p-2">
+                    <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu (Hidden by default) - Now uses the component dark color --><div id="mobile-menu" class="hidden md:hidden bg-primary-dark shadow-xl border-t border-gray-200">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md shadow-xl border-t border-gray-200 mt-2 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
                 <a href="#video" class="text-secondary-dark hover:bg-gray-100 hover:text-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-300">Video Editing</a>
                 <a href="#pamphlets" class="text-secondary-dark hover:bg-gray-100 hover:text-primary-accent block px-3 py-2 rounded-md text-base font-medium transition duration-300">Print Work</a>
-                <a href="#about" class="text-secondary-dark hover:bg-gray-100 hover:text-primary-accent block px-3 py-2 rounded-md text-base font-bold transition duration-300 pulse-accent">Contact Now</a>
+                <a href="#contact" class="text-secondary-dark hover:bg-gray-100 hover:text-primary-accent block px-3 py-2 rounded-md text-base font-bold transition duration-300">Contact Now</a>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- 1. Hero Section - 100% viewport height, light charcoal background --><section id="home" class="min-h-screen flex items-center justify-center text-center bg-primary-bg relative overflow-hidden border-b-2 border-primary-accent/30">
-            <!-- Subtle background pattern for softer feel --><div class="absolute inset-0 opacity-20 pointer-events-none">
-                <div class="w-full h-full bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <section id="home" class="relative min-h-screen flex flex-col justify-center items-center text-center overflow-hidden">
+            
+            <div class="absolute inset-0 z-0">
+                <img src="NaniWorking.jpg" alt="Creative Workspace" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/90"></div>
             </div>
-            <div class="max-w-5xl mx-auto px-4 z-10 w-full">
-                <!-- Main title now uses Lora font with softer styling --><h1 class="hero-title text-7xl sm:text-8xl lg:text-[9rem] font-bold leading-tight tracking-normal mb-6 text-secondary-dark italic">
-                    <span class="block text-3xl sm:text-4xl font-light mb-4 text-primary-accent title-subtext not-italic">Crafting Your Story, Beautifully.</span>
-                    Personal <span class="headlight-essence">Portfolio</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-700 mt-8 max-w-4xl mx-auto font-light">
-                    Elevating visions through elegant video and exquisite print design.
+
+            <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mt-10 animate-fade-in-up">
+                
+                <div class="mb-4 flex justify-center">
+                    <img src="Logo.png" 
+                         alt="Nani Creative Logo" 
+                         class="w-32 h-32 md:w-48 md:h-48 object-contain drop-shadow-2xl"
+                         onerror="this.style.display='none'">
+                </div>
+                <h2 class="hero-title text-3xl md:text-5xl font-bold text-primary-accent mb-6 drop-shadow-md leading-tight">
+                    Crafting Your Story, Beautifully.
+                </h2>
+                
+                <p class="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto">
+                    Elevating visions through elegant video editing and exquisite print design.
                 </p>
+
+            </div>
+
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#video" class="text-white/50 hover:text-primary-accent transition">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
             </div>
         </section>
 
-        <!-- 2. Video Editing Portfolio Section --><section id="video" class="py-16 md:py-24 bg-primary-dark shadow-inner">
+        <section id="video" class="py-16 md:py-24 bg-primary-dark shadow-inner">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="hero-title text-5xl font-extrabold text-center mb-16 border-b-2 border-primary-accent pb-2 inline-block mx-auto text-secondary-dark">
                     Video Editing Showcase
@@ -180,15 +176,15 @@
                       <iframe width="560" height="315" src="https://www.youtube.com/embed/EvQWxlmU95A?si=yjNv0GvocHg9YA8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                         <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Promotional Videos</h3>
-                        <p class="text-gray-700">Showcase a brand, product, or event in a compelling and attention-grabbing way. Utilize impactful visuals, strategic pacing, and clear messaging to drive awareness, highlight key features, and encourage audience action or engagement.</p>
+                        <p class="text-gray-700">Showcase a brand, product, or event in a compelling and attention-grabbing way.</p>
                     </div>
 
                 <div class="bg-primary-bg p-6 rounded-xl shadow-soft-2xl border border-primary-accent/40">
                     <div class="video-container mb-4">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/RsLhz75Y2eE?si=4xOhOdMz91Gp-vwZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
-                        <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Promotional Videos</h3>
-                        <p class="text-gray-700">Showcase a brand, product, or event in a compelling and attention-grabbing way. Utilize impactful visuals, strategic pacing, and clear messaging to drive awareness, highlight key features, and encourage audience action or engagement.</p>
+                        <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Brand Storytelling</h3>
+                        <p class="text-gray-700">Utilize impactful visuals and strategic pacing to drive awareness and engagement.</p>
                     </div>
 
                     <div class="bg-primary-bg p-6 rounded-xl shadow-soft-2xl border border-primary-accent/40">
@@ -196,15 +192,15 @@
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/zLu7TemimXI?si=pGtoF13p4nrJ9qBJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                         <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Lyric Videos</h3>
-                        <p class="text-gray-700">Present song lyrics through engaging typography, smooth transitions, and visually synced animations. Enhance the listening experience by combining music with motion graphics, creating a more immersive and accessible across digital platforms.</p>
+                        <p class="text-gray-700">Present song lyrics through engaging typography and smooth transitions.</p>
                     </div>
 
                     <div class="bg-primary-bg p-6 rounded-xl shadow-soft-2xl border border-primary-accent/40">
                          <div class="video-container mb-4">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/kpmjKHPmtK0?si=yzGO6gPWFulH6YTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
-                        <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Lyric Videos</h3>
-                         <p class="text-gray-700">Present song lyrics through engaging typography, smooth transitions, and visually synced animations. Enhance the listening experience by combining music with motion graphics, creating a more immersive and accessible across digital platforms.</p>
+                        <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Motion Graphics</h3>
+                         <p class="text-gray-700">Enhance the listening experience by combining music with motion graphics.</p>
                     </div>
 
                     <div class="bg-primary-bg p-6 rounded-xl shadow-soft-2xl border border-primary-accent/40 md:col-span-2 lg:col-span-1">
@@ -212,7 +208,7 @@
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/XzJ9pOI2Yz4?si=yzBHLkpmy5_-h-bz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                         <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Talking Head Videos</h3>
-                        <p class="text-gray-700">Feature a speaker delivering information directly to the camera in a clean and professional setup. Focus on clear communication, polished visuals, and steady pacing. Ideal for vlogs, online courses, corporate messages, and informative content.</p>
+                        <p class="text-gray-700">Feature a speaker delivering information directly to the camera in a clean and professional setup.</p>
                     </div>
 
                     <div class="bg-primary-bg p-6 rounded-xl shadow-soft-2xl border border-primary-accent/40">
@@ -220,20 +216,20 @@
                            <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F203929923745980%2Fvideos%2F203934080412231%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
                             </div>
                             <h3 class="text-2xl font-semibold text-primary-accent mb-2 hero-title">Explainer Videos</h3>
-                            <p class="text-gray-700">Simplify complex ideas into clear, easy-to-understand visual stories. Help audiences quickly grasp products, services, processes, or concepts through structured narration, informative graphics, and concise visuals.</p>
+                            <p class="text-gray-700">Simplify complex ideas into clear, easy-to-understand visual stories.</p>
                         </div>
                     
                 </div>
             </div>
         </section>
 
-        <!-- 3. Print/Pamphlet Portfolio Section (Updated with Tabbed Grid) --><section id="pamphlets" class="py-16 md:py-24 bg-primary-bg border-t border-gray-300">
+        <section id="pamphlets" class="py-16 md:py-24 bg-primary-bg border-t border-gray-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="hero-title text-5xl font-extrabold text-center mb-10 border-b-2 border-primary-accent pb-2 inline-block mx-auto text-secondary-dark">
-                    Print & Graphic Design Portfolio
+                    Print & Graphic Design
                 </h2>
 
-                <!-- Tab Navigation Buttons --><div class="flex flex-wrap justify-center space-x-2 sm:space-x-4 mb-12">
+                <div class="flex flex-wrap justify-center space-x-2 sm:space-x-4 mb-12">
                     <button id="tab-logos" onclick="switchTab('logos')" class="tab-button py-3 px-6 rounded-full font-semibold transition duration-300 shadow-soft-2xl hero-title text-gray-700 hover:text-primary-accent hover:bg-gray-100">
                         Logo Design
                     </button>
@@ -245,77 +241,56 @@
                     </button>
                 </div>
 
-                <!-- Content Containers (Only one is visible at a time) --><!-- Category 1: Logos (6 Samples) --><div id="logos-content" class="tab-content">
-                    <h3 class="hero-title text-2xl font-bold text-primary-accent mb-6">Logo Design</h3>
-                    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                        <!-- Sample 1 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <!-- Image now has onclick and defined height (h-32) --><img onclick="openModal(this.src)" src="Logos/Bay Area 1.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/FFFFFF/333333?text=Logo+A';" alt="Logo Design Sample A" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
+                <div id="logos-content" class="tab-content">
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="Logos/Bay Area 1.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/FFFFFF/333333?text=Logo+A';" class="w-full h-32 object-contain cursor-pointer">
                         </div>
-                        <!-- Sample 2 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="Logos/Bay Area 2.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/f59e0b/333333?text=Logo+B';" alt="Logo Design Sample B" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="Logos/Bay Area 2.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/f59e0b/333333?text=Logo+B';" class="w-full h-32 object-contain cursor-pointer">
                         </div>
-                        <!-- Sample 3 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="Logos/Lipunan Tech.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/333333/f59e0b?text=Logo+C';" alt="Logo Design Sample C" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="Logos/Lipunan Tech.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/333333/f59e0b?text=Logo+C';" class="w-full h-32 object-contain cursor-pointer">
                         </div>
-                        <!-- Sample 4 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="Logos/Nirbana.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/F4F4F4/333333?text=Logo+D';" alt="Logo Design Sample D" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="Logos/Nirbana.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/F4F4F4/333333?text=Logo+D';" class="w-full h-32 object-contain cursor-pointer">
                         </div>
-                        <!-- Sample 5 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="Logos/Sustainability.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/f59e0b/333333?text=Logo+E';" alt="Logo Design Sample E" class="w-full h-32 md:h-40 aspect-square object-contain border border-primary-accent/20 rounded-lg cursor-pointer">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category 2: Product Photography & Retouching (6 Samples) --><div id="product-content" class="tab-content hidden">
-                    <h3 class="hero-title text-2xl font-bold text-primary-accent mb-6">Product Photography & Retouching</h3>
-                    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                        <!-- Sample 1 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <!-- Image now has onclick, defined height (h-32), and object-contain --><img onclick="openModal(this.src)" src="Product Shots/10.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/FFFFFF/333333?text=Product+1';" alt="Product Shot Sample 1" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
-                        </div>
-                        <!-- Sample 2 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="Product Shots/12.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f59e0b/333333?text=Product+2';" alt="Product Shot Sample 2" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
-                        </div>
-                        <!-- Sample 3 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="Product Shots/14.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/333333/f59e0b?text=Product+3';" alt="Product Shot Sample 3" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
-                        </div>
-                        <!-- Sample 4 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="Product Shots/2.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/F4F4F4/333333?text=Product+4';" alt="Product Shot Sample 4" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
-                        </div>
-                        <!-- Sample 5 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="Product Shots/4.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f59e0b/333333?text=Product+5';" alt="Product Shot Sample 5" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
-                        </div>
-                        <!-- Sample 6 (Extra space for more than 5) --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40 hidden md:block">
-                            <img onclick="openModal(this.src)" src="Product Shots/6.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/FFFFFF/333333?text=Product+6';" alt="Product Shot Sample 6" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
-                        </div>
-                        <!-- Sample 7 (Extra space for more than 5) --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40 hidden md:block">
-                            <img onclick="openModal(this.src)" src="Product Shots/8.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/FFFFFF/333333?text=Product+6';" alt="Product Shot Sample 6" class="w-full h-32 md:h-40 aspect-[3/2] object-contain rounded-lg cursor-pointer">
+                         <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="Logos/Sustainability.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/f59e0b/333333?text=Logo+E';" class="w-full h-32 object-contain cursor-pointer">
                         </div>
                     </div>
                 </div>
 
-                <!-- Category 3: Pubmats & Social Media Graphics (6 Samples) --><div id="pubmats-content" class="tab-content hidden">
-                    <h3 class="hero-title text-2xl font-bold text-primary-accent mb-6">Pubmats & Social Media Graphics</h3>
-                    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                        <!-- Sample 1 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="PubMats/1.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/f59e0b/333333?text=Pubmat+A';" alt="Pubmat Sample 1" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                <div id="product-content" class="tab-content hidden">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="Product Shots/10.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/FFFFFF/333333?text=Product+1';" class="w-full h-32 object-contain cursor-pointer">
                         </div>
-                        <!-- Sample 2 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="PubMats/2.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/333333/f59e0b?text=Pubmat+B';" alt="Pubmat Sample 2" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="Product Shots/12.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f59e0b/333333?text=Product+2';" class="w-full h-32 object-contain cursor-pointer">
                         </div>
-                        <!-- Sample 3 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="PubMats/3.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/F4F4F4/333333?text=Pubmat+C';" alt="Pubmat Sample 3" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="Product Shots/14.png" onerror="this.onerror=null; this.src='https://placehold.co/300x200/333333/f59e0b?text=Product+3';" class="w-full h-32 object-contain cursor-pointer">
                         </div>
-                        <!-- Sample 4 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="PubMats/4.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/FFFFFF/333333?text=Pubmat+D';" alt="Pubmat Sample 4" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                         <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="Product Shots/2.png" onerror="this.onerror=null; this.src='https://placehold.co/200x200/F4F4F4/333333?text=Product+4';" class="w-full h-32 object-contain cursor-pointer">
                         </div>
-                        <!-- Sample 5 --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40">
-                            <img onclick="openModal(this.src)" src="PubMats/Web1.jpg" onerror="this.onerror=null; this.src='https://placehold.co/200x300/f59e0b/333333?text=Pubmat+E';" alt="Pubmat Sample 5" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                    </div>
+                </div>
+
+                <div id="pubmats-content" class="tab-content hidden">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                         <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="PubMats/1.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/f59e0b/333333?text=Pubmat+A';" class="w-full h-40 object-contain cursor-pointer">
                         </div>
-                        <!-- Sample 6 (Extra space for more than 5) --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40 hidden md:block">
-                            <img onclick="openModal(this.src)" src="PubMats/Web2.jpg" onerror="this.onerror=null; this.src='https://placehold.co/200x300/F4F4F4/333333?text=Pubmat+F';" alt="Pubmat Sample 6" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="PubMats/2.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/333333/f59e0b?text=Pubmat+B';" class="w-full h-40 object-contain cursor-pointer">
                         </div>
-                        <!-- Sample 7 (Extra space for more than 5) --><div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition duration-300 hover:scale-[1.03] hover:shadow-primary-accent/40 hidden md:block">
-                            <img onclick="openModal(this.src)" src="PubMats/Web3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/200x300/F4F4F4/333333?text=Pubmat+F';" alt="Pubmat Sample 6" class="w-full h-32 md:h-40 aspect-[2/3] object-contain rounded-lg cursor-pointer">
+                         <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="PubMats/3.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/F4F4F4/333333?text=Pubmat+C';" class="w-full h-40 object-contain cursor-pointer">
+                        </div>
+                        <div class="bg-primary-dark p-3 rounded-xl shadow-soft-2xl border border-primary-accent/40 transition hover:scale-105">
+                            <img onclick="openModal(this.src)" src="PubMats/4.png" onerror="this.onerror=null; this.src='https://placehold.co/200x300/FFFFFF/333333?text=Pubmat+D';" class="w-full h-40 object-contain cursor-pointer">
                         </div>
                     </div>
                 </div>
@@ -323,45 +298,41 @@
             </div>
         </section>
 
-        <!-- 4. About & Skills Section --><section id="about" class="py-16 md:py-24 bg-primary-dark border-t border-primary-bg shadow-inner">
+        <section id="about" class="py-16 md:py-24 bg-primary-dark border-t border-primary-bg shadow-inner">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="hero-title text-5xl font-extrabold text-center mb-16 border-b-2 border-primary-accent pb-2 inline-block mx-auto text-secondary-dark">
-                    About Me & Core Skills
+                    About Me & Skills
                 </h2>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     <div class="lg:col-span-1">
-                        <!-- Profile Image Container --><div class="w-48 h-48 rounded-full mx-auto mb-6 border-4 border-primary-accent shadow-lg shadow-primary-accent/50 flex items-center justify-center overflow-hidden">
+                        <div class="w-48 h-48 rounded-full mx-auto mb-6 border-4 border-primary-accent shadow-lg shadow-primary-accent/50 flex items-center justify-center overflow-hidden">
                             <img src="ProfilePic/profilePicNani.jpg" 
-                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/f59e0b/F4F4F4?text=Your+Profile+Image';" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/f59e0b/F4F4F4?text=Profile+Pic';" 
                                  alt="Profile Image" 
-                                 class="w-full h-full object-cover aspect-square">
+                                 class="w-full h-full object-cover">
                         </div>
                         <h3 class="text-3xl hero-title font-bold text-center mb-4 text-secondary-dark">The Editor's Vision</h3>
                         <p class="text-gray-700 text-center">
                             I believe in the power of pacing, sound, and color to elevate simple footage into compelling stories.
                         </p>
-                        <p class="text-gray-700 text-center">     
-                            My passion lies in finding the perfect rhythm for every cut, whether it's a feature film or a simple flyer layout.
-                        </p>
                     </div>
                     <div class="lg:col-span-2">
                         <h3 class="text-3xl font-bold mb-6 text-primary-accent hero-title">Software Expertise</h3>
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                            <!-- Video Skills --><div class="p-4 bg-primary-bg rounded-lg shadow-soft-2xl border border-primary-accent/40">
+                            <div class="p-4 bg-primary-bg rounded-lg shadow-soft-2xl border border-primary-accent/40">
                                 <p class="font-semibold text-secondary-dark">Video Editing</p>
                                 <ul class="list-disc list-inside text-primary-accent/80 text-sm mt-1 space-y-1">
-                                    <li>Adobe Premiere Pro (Master)</li>
+                                    <li>Adobe Premiere Pro</li>
                                     <li>CapCut</li>
                                     <li>Filmora</li>
                                 </ul>
                             </div>
-                            <!-- Other Skills --><div class="p-4 bg-primary-bg rounded-lg shadow-soft-2xl border border-primary-accent/40">
-                                <p class="font-semibold text-secondary-dark">Print & Design</p>
+                            <div class="p-4 bg-primary-bg rounded-lg shadow-soft-2xl border border-primary-accent/40">
+                                <p class="font-semibold text-secondary-dark">Design</p>
                                 <ul class="list-disc list-inside text-primary-accent/80 text-sm mt-1 space-y-1">
                                     <li>Adobe Photoshop</li>
                                     <li>Adobe Illustrator</li>
                                     <li>Adobe InDesign</li>
-                                    <li>Adobe Lightroom</li>
                                     <li>Canva</li>
                                 </ul>
                             </div>
@@ -371,100 +342,58 @@
             </div>
         </section>
 
-        <!-- 5. Contact Section --><section id="contact" class="py-16 md:py-24 bg-primary-bg border-t border-primary-dark">
+        <section id="contact" class="py-16 md:py-24 bg-primary-bg border-t border-primary-dark">
             <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="hero-title text-5xl font-extrabold text-center mb-10 text-secondary-dark">
-                    Ready to Start Your Project?
+                    Ready to Start?
                 </h2>
-                <p class="text-xl text-gray-700 mb-8">
-                    Let's collaborate on your next video or print design project.
-                </p>
-
                 <div class="bg-primary-dark p-6 rounded-xl shadow-soft-2xl border border-primary-accent/40">
                     <p class="text-lg font-semibold mb-3 text-secondary-dark">Send me an email:</p>
                     <div class="flex items-center justify-center space-x-2">
-                        <input id="email-to-copy" type="text" value="natentar.work@gmail.com" readonly class="bg-primary-bg text-secondary-dark p-2 rounded-lg text-center w-full max-w-xs focus:outline-none select-all cursor-pointer border border-primary-accent/50" onclick="this.select();">
-                        <!-- Contact button here is static, the focus is on the main CTA button. --><button id="copy-email-btn" class="p-2 bg-primary-accent rounded-lg text-secondary-dark hover:opacity-90 transition duration-300 transform hover:scale-105 shadow-md shadow-primary-accent/50" title="Copy Email Address">
-                            
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=content_copy" />
-                            <style>
-                            .material-symbols-outlined {
-                              font-variation-settings:
-                              'FILL' 0,
-                              'wght' 400,
-                              'GRAD' 0,
-                              'opsz' 24
-                            }
-                            </style>
-                            <span class="material-symbols-outlined">
-                            content_copy
-                            </span>
-                            <!--<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m-3 7h3m-3 0V9m0 6h-3m3 0a2 2 0 002-2v-1a2 2 0 00-2-2m-3 3h-3m3 0a2 2 0 01-2-2v-1a2 2 0 012-2m-3 3h-3m3 0a2 2 0 002-2v-1a2 2 0 00-2-2m-3 3h-3m3 0a2 2 0 01-2-2v-1a2 2 0 012-2m-3 3h-3" />
-                            </svg>-->
+                        <input id="email-to-copy" type="text" value="natentar.work@gmail.com" readonly class="bg-primary-bg text-secondary-dark p-2 rounded-lg text-center w-full max-w-xs border border-primary-accent/50">
+                        <button id="copy-email-btn" class="p-2 bg-primary-accent rounded-lg text-secondary-dark hover:opacity-90 shadow-md">
+                           <span class="font-bold text-sm">COPY</span>
                         </button>
                     </div>
-                    <!-- Copy Confirmation Message --><p id="copy-message" class="text-sm text-primary-accent mt-2 h-4 transition-opacity duration-300 opacity-0"></p>
+                    <p id="copy-message" class="text-sm text-primary-accent mt-2 h-4 transition-opacity duration-300 opacity-0"></p>
                 </div>
             </div>
         </section>
     </main>
     
-    <!-- Full-Screen Image Modal (Lightbox) --><div id="image-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/90 backdrop-blur-sm p-4" onclick="closeModal()">
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/90 backdrop-blur-sm p-4" onclick="closeModal()">
         <div class="relative max-w-7xl max-h-full" onclick="event.stopPropagation()">
-            <!-- Modal Content: Close Button and Image --><button onclick="closeModal()" class="absolute top-4 right-4 text-white text-4xl font-bold p-2 leading-none hover:text-primary-accent transition duration-200 z-50 rounded-full bg-secondary-dark/50">
-                &times;
-            </button>
-            <img id="modal-image" src="" alt="Enlarged Portfolio Image" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl border-4 border-primary-accent/50">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-primary-accent">&times;</button>
+            <img id="modal-image" src="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
         </div>
     </div>
 
-    <!-- Footer --><footer class="bg-primary-dark border-t border-gray-300 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-700 text-sm">
-            <p>&copy; 2025 Arnelli Atentar Creative Portfolio. All rights reserved.</p>
-            <div class="mt-2 space-x-4">
-                <a href="http://www.linkedin.com/in/arnelli-atentar-618062153" class="hover:text-primary-accent transition duration-300">LinkedIn</a>
-            </div>
+    <footer class="bg-black/90 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2025 Arnelli Atentar Creative. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // JavaScript for Mobile Menu Toggle
+        // Toggle Mobile Menu
         document.getElementById('menu-toggle').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // JavaScript for Copy Email Functionality
+        // Copy Email
         document.getElementById('copy-email-btn').addEventListener('click', function() {
             const emailInput = document.getElementById('email-to-copy');
-            const copyMessage = document.getElementById('copy-message');
-
-            // Select the text field
             emailInput.select();
-            emailInput.setSelectionRange(0, 99999); // For mobile devices
-
-            try {
-                // Copy the text inside the text field
-                document.execCommand('copy');
-                copyMessage.textContent = 'Email copied to clipboard!';
-                copyMessage.classList.remove('opacity-0');
-                copyMessage.classList.add('opacity-100');
-
-                // Clear message after 3 seconds
-                setTimeout(() => {
-                    copyMessage.classList.remove('opacity-100');
-                    copyMessage.classList.add('opacity-0');
-                }, 3000);
-
-            } catch (err) {
-                copyMessage.textContent = 'Failed to copy. Please select and copy manually.';
-                copyMessage.classList.remove('opacity-0');
-                copyMessage.classList.add('opacity-100');
-            }
+            emailInput.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            
+            const msg = document.getElementById('copy-message');
+            msg.textContent = 'Copied to clipboard!';
+            msg.classList.remove('opacity-0');
+            setTimeout(() => msg.classList.add('opacity-0'), 3000);
         });
 
-        // --- New Modal/Lightbox Functions ---
+        // Modal Functions
         const imageModal = document.getElementById('image-modal');
         const modalImage = document.getElementById('modal-image');
 
@@ -472,49 +401,26 @@
             modalImage.src = imageSrc;
             imageModal.classList.remove('hidden');
         }
-
         function closeModal() {
             imageModal.classList.add('hidden');
-            modalImage.src = ""; // Clear source for performance
         }
-        // ------------------------------------
 
-        // Function to handle the tab switching in the Print section
+        // Tab Switching
         function switchTab(activeTabId) {
-            // 1. Hide all content and reset tab styling
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.add('hidden');
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+            document.querySelectorAll('.tab-button').forEach(b => {
+                b.classList.remove('bg-primary-accent', 'text-secondary-dark', 'shadow-soft-2xl');
+                b.classList.add('text-gray-700', 'hover:text-primary-accent', 'hover:bg-gray-100');
             });
 
-            document.querySelectorAll('.tab-button').forEach(button => {
-                // Remove active styling
-                button.classList.remove('bg-primary-accent', 'text-secondary-dark', 'shadow-soft-2xl'); /* Updated for new shadow */
-                // Add inactive styling
-                button.classList.add('text-gray-700', 'hover:text-primary-accent', 'hover:bg-gray-100');
-            });
-
-            // 2. Show the active content and set the active tab styling
-            const activeContent = document.getElementById(activeTabId + '-content');
-            const activeTabButton = document.getElementById('tab-' + activeTabId);
-
-            if (activeContent) {
-                activeContent.classList.remove('hidden');
-            }
-
-            if (activeTabButton) {
-                // Remove inactive styling
-                activeTabButton.classList.remove('text-gray-700', 'hover:text-primary-accent', 'hover:bg-gray-100');
-                // Add active styling
-                activeTabButton.classList.add('bg-primary-accent', 'text-secondary-dark', 'shadow-soft-2xl'); /* Updated for new shadow */
-            }
+            document.getElementById(activeTabId + '-content').classList.remove('hidden');
+            const btn = document.getElementById('tab-' + activeTabId);
+            btn.classList.remove('text-gray-700', 'hover:text-primary-accent', 'hover:bg-gray-100');
+            btn.classList.add('bg-primary-accent', 'text-secondary-dark', 'shadow-soft-2xl');
         }
 
-        // Initialize the default tab (Logos) when the script loads
-        // Wrapping in a check to ensure all elements are ready
-        document.addEventListener('DOMContentLoaded', () => {
-             // We delay the initialization slightly to ensure all Tailwind styles are parsed correctly
-             setTimeout(() => switchTab('logos'), 10);
-        });
+        // Initialize Tab
+        document.addEventListener('DOMContentLoaded', () => setTimeout(() => switchTab('logos'), 10));
     </script>
 </body>
 </html>
